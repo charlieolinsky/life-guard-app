@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './RandomUser.css';
 
 export default class RandomUser extends Component {
     constructor() {
@@ -15,7 +16,6 @@ export default class RandomUser extends Component {
 
     getUserFromAPI = () => {
         axios.get("/getRandomUsers").then(response => {
-            
             this.setState({
                 firstName : response.data.parsedData[0]['name']['first'],
                 lastName : response.data.parsedData[0]['name']['last'],
@@ -24,28 +24,38 @@ export default class RandomUser extends Component {
                 pictureURL: response.data.parsedData[0]['picture']['large']
                 
             })
-        })
+        }).then(this.fillRandomForm())
+
+        
     };
 
-    postUserToDB = () => {
-        axios.post("/postRandomUser", { 
-            
+    fillRandomForm = () => {
 
-        })
+        var fName = document.getElementById('fName');
+        fName.value = this.state.firstName
+        var lName = document.getElementById('lName');
+        lName.value = this.state.lastName
+        var uName = document.getElementById('uName');
+        uName.value = this.state.userName
+        var pWord = document.getElementById('pWord');
+        pWord.value = this.state.hashPassword
     }
 
     render() {
         return(
-            <div>
+            <div className='sign-up'>
                 <button onClick={() => this.getUserFromAPI()}>Generate Random User</button>
-                <h1>User Info: </h1>
-                    <h3>firstName = {this.state.firstName}</h3>
-                    <h3>lastName = {this.state.lastName}</h3>
-                    <h3>userName = {this.state.userName}</h3>
-                    <h3>hashPassword = {this.state.hashPassword}</h3>
-                    <h3>pictureURL = {this.state.pictureURL}</h3>
                 
-                <button onCLick={() => this.postUserToDB}>Add to DataBase</button> 
+                    <form className='sign-up-form' action='http://localhost:5000/insertUser' method='POST'>
+                        <input type='text' name='firstName'placeholder='First Name' id='fName'/>
+
+
+                        <input type='text' name='lastName' placeholder='Last Name' id='lName'/>
+                        <input type='text' name='userName' placeholder='Username' id='uName'/>
+                        <input type='text' name='hashPassword' placeholder='Password' id='pWord'/>
+                        <input type='text' name='pictureURL' value='pictureURL' id='picURL'/>
+                        <input type='submit' value='Submit' />
+                    </form>
             </div>
         );
     }

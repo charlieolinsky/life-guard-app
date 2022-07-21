@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql2');
 
 const server = express();
+server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.json())
+
 const port = 5000;
 
 var connection = mysql.createConnection({
@@ -18,8 +21,8 @@ server.get('/', (req, res) => {
   res.send('Backend Running')
 })
 
-server.get('/getRandomUsers', (req, res) => {
-    request('https://randomuser.me/api/?results=1', function(error, response, body) {
+server.get('/getRandomUsers', async (req, res) => {
+    await request('https://randomuser.me/api/?results=1', function(error, response, body) {
         if(!error && response.statusCode == 200) {
             
             result = JSON.parse(body)["results"][0];
@@ -32,12 +35,17 @@ server.get('/getRandomUsers', (req, res) => {
     })
   })
 
-  server.post("/postRandomUser", (req, res) => {
-    connection.query(`INSERT INTO users(username, hashPassword, firstName, lastName, pictureURL) VALUES('${req.body.username}', '${req.body.hashPassword}', '${req.body.firstName}', '${req.body.lastName}', '${req.body.pictureURL}')`, (error, results) => {
-        if (error) throw error
-        console.log(results)
-    })
+server.post("/insertUser", (req, res) => {
+  
+  console.log("Request went through")
+  console.log(req.body.firstName)
+  res.redirect("http://localhost:3000")
+
+  connection.query(`INSERT INTO users(username, hashPassword, firstName, lastName, picture) VALUES('${req.body.userName}', '${req.body.hashPassword}', '${req.body.firstName}', '${req.body.lastName}', '${req.body.pictureURL}')`, (error, results) => {
+      if (error) throw error
+      console.log(results)
   })
+})
 
 
 server.listen(port, () => {
