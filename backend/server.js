@@ -22,7 +22,7 @@ server.get('/', (req, res) => {
 })
 
 server.get('/getRandomUsers', async (req, res) => {
-    await request('https://randomuser.me/api/?results=1', function(error, response, body) {
+    request('https://randomuser.me/api/?results=1', function(error, response, body) {
         if(!error && response.statusCode == 200) {
             
             result = JSON.parse(body)["results"][0];
@@ -37,7 +37,6 @@ server.get('/getRandomUsers', async (req, res) => {
 
 server.post("/insertUser", (req, res) => {
   
-  console.log("Request went through")
   console.log(req.body.firstName)
   res.redirect("http://localhost:3000")
 
@@ -45,6 +44,14 @@ server.post("/insertUser", (req, res) => {
       if (error) throw error
       console.log(results)
   })
+})
+
+server.post("/selectDepartment", (req, res) => {
+    res.redirect("http://localhost:3000")
+
+    connection.query(`SELECT firstName, lastName INTO department FROM users`)
+    if (error) throw error
+      console.log(results)
 })
 
 

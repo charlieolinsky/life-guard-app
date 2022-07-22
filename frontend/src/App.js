@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
-import RandomUser from './RandomUser';
+import CreateUser from './CreateUser';
 
 function App() {
   return (
     <div className="App">
-      <RandomUser />
+      <CreateUser />
     </div>
   );
 }

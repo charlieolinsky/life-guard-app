@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './RandomUser.css';
+import './CreateUser.css';
 
-export default class RandomUser extends Component {
+export default class CreateUser extends Component {
     constructor() {
         super();
         this.state = {
@@ -54,6 +54,33 @@ export default class RandomUser extends Component {
                         <input type='text' name='userName' placeholder='Username' id='uName'/>
                         <input type='text' name='hashPassword' placeholder='Password' id='pWord'/>
                         <input type='text' name='pictureURL' value='pictureURL' id='picURL'/>
+                    
+                    <div className='select-department'>
+                        <fieldset>
+                            <legend>User Job title: </legend>
+                            <div>
+                                <input type="radio" id="ad" name="job_title" value="Aquatics Director"/>
+                                <label for="ad"> Aquatics Director</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="ehlg" name="job_title" value="Executive Head Lifeguard"/>
+                                <label for="ehg"> Executive Head Lifeguard</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="hlg" name="job_title" value="Head Lifeguard"/>
+                                <label for="hlg"> Head Lifeguard</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="lg" name="job_title" value="Lifeguard"/>
+                                <label for="lg"> Lifeguard</label>
+                            </div>   
+                                
+                        </fieldset>
+                    </div>        
+
                         <input type='submit' value='Submit' />
                     </form>
             </div>
@@ -61,4 +88,3 @@ export default class RandomUser extends Component {
     }
 
 }
-    
