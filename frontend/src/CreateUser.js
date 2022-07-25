@@ -40,40 +40,6 @@ export default class CreateUser extends Component {
         pWord.value = this.state.hashPassword
     }
 
-    setUserDepartment = () => {
-        var isAD = document.getElementById('ad').checked;
-        var isEHLG = document.getElementById('ehlg').checked;
-        var isHLG = document.getElementById('hlg').checked;
-        var isLG = document.getElementById('lg').checked;
-
-        if(isAD){
-            
-            this.setState(() => {
-                return {department: 'aquatics_director'}
-            })
-        }
-        else if(isEHLG){
-            this.setState(() => {
-                return {department: 'executive_head_lifeguard'}
-            })
-        }
-        else if(isHLG){
-            this.setState(() => {
-                return {department: 'head_lifeguard'}
-            })
-        }
-        else if(isLG){
-            this.setState(() => {
-                return {department: 'lifeguard'}
-            })
-        }
-        else{
-            this.setState(() => {
-                return {department: "No Department Selected"}
-            })
-        }
-    }
-
     render() {
         return(
             <div className='sign-up'>
@@ -85,24 +51,24 @@ export default class CreateUser extends Component {
                             <input type='text' name='lastName' placeholder='Last Name' id='lName'/>
                             <input type='text' name='userName' placeholder='Username' id='uName'/>
                             <input type='text' name='hashPassword' placeholder='Password' id='pWord'/>
-                            <input type='text' name='pictureURL' /*value='pictureURL'*/ id='picURL'/>       
+                            {/* <input type='text' name='pictureURL' id='picURL'/>        */}
 
                             <fieldset>
                                     <legend>User Job title: </legend>
                                     <div>
-                                        <input type="radio" id="ad" name="job_title" />
+                                        <input type="radio" id="ad" value='aquatics_director' name="department" />
                                         <label htmlFor="ad"> Aquatics Director</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="ehlg" name="job_title" />
+                                        <input type="radio" id="ehlg" value='executive_head_lifeguard' name="department" />
                                         <label htmlFor="ehg"> Executive Head Lifeguard</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="hlg" name="job_title" />
+                                        <input type="radio" id="hlg" value='head_lifeguard' name="department" />
                                         <label htmlFor="hlg"> Head Lifeguard</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="lg" name="job_title" />
+                                        <input type="radio" id="lg" value='lifeguard' name="department" />
                                         <label htmlFor="lg"> Lifeguard</label>
                                     </div>   
                                         

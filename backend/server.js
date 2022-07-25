@@ -37,28 +37,24 @@ server.get('/getRandomUsers', async (req, res) => {
 
 server.post("/insertUser", (req, res) => {
   
-  console.log(req.body.department)
-  res.redirect("http://localhost:3000")
-  console.log("User Called")
-
+  res.redirect("http://localhost:3000/Home")
+  
   //Insert User
+  console.log("User Called")
   connection.query(`INSERT INTO users(username, hashPassword, firstName, lastName, picture) VALUES('${req.body.userName}', '${req.body.hashPassword}', '${req.body.firstName}', '${req.body.lastName}', '${req.body.pictureURL}')`, (error, results) => {
-     
-  //Add User Department
-  // INSERT INTO department (<>) SELECT (firstName, lastName) FROM users
-    
     if (error) throw error
   })
+  //Add User Department
+  console.log("Department Called")
+  connection.query(`INSERT INTO department (${req.body.department}) VALUES('${req.body.firstName+' '+req.body.lastName}')`, (error, results) => {
+    if (error) throw error
+  })
+    
+    
 })
 
 server.post("/selectDepartment", (req, res) => {
-    res.redirect("http://localhost:3000")
-    console.log("Department Called")
-    console.log(res.body.department)
-    //connection.query(`SELECT firstName, lastName INTO department FROM users`)
-
-   
-
+    
     if (error) throw error
       console.log(results)
 })
