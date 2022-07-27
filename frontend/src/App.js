@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import CreateUser from './CreateUser';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <CreateUser />
