@@ -16,7 +16,7 @@ export default class CreateUser extends Component {
     }
 
     getUserFromAPI = async () => {
-        await axios.get("/getRandomUsers").then (response => {
+        axios.get("/getRandomUsers").then (response => {
             this.setState({
                 firstName : response.data.parsedData[0]['name']['first'],
                 lastName : response.data.parsedData[0]['name']['last'],
@@ -76,7 +76,9 @@ export default class CreateUser extends Component {
                             
                             <input type='submit' value='Submit' />
                         </form>
+                        <hr></hr>
             </div>
+
         );
     }
 

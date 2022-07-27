@@ -49,11 +49,10 @@ server.post("/insertUser", (req, res) => {
   connection.query(`INSERT INTO department (${req.body.department}) VALUES('${req.body.firstName+' '+req.body.lastName}')`, (error, results) => {
     if (error) throw error
   })
-    
-    
+      
 })
 
-server.post("/selectDepartment", (req, res) => {
+server.post("/getUser", (req, res) => {
     
     if (error) throw error
       console.log(results)
