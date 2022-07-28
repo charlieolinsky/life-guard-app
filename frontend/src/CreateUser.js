@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios'
 import './CreateUser.css';
+import { useNavigate } from 'react-router-dom';
 
 const CreateUser = () => {
     
@@ -48,6 +49,11 @@ const CreateUser = () => {
         })
    }
 
+   let navigate = useNavigate(); 
+   const navPoolManager = (e) => {
+        e.preventDefault();
+        navigate('/PoolManager'); 
+   }
     
         return(
             <div className='sign-up'>
@@ -79,7 +85,8 @@ const CreateUser = () => {
                         setSalary(event.target.value) 
                     }} />
                     
-                    <button onClick={addEmployee}>Add Employee</button>  
+                    <button onClick={addEmployee}>Add Employee</button> 
+                    <button onClick={navPoolManager}>View Pool Manager</button> 
                             
                 </div>             
                            
