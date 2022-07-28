@@ -1,8 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'
 import './CreateUser.css';
 import { useNavigate } from 'react-router-dom';
+import { Location } from 'react-router-dom';
 
 const CreateUser = () => {
     
@@ -54,6 +55,12 @@ const CreateUser = () => {
         e.preventDefault();
         navigate('/PoolManager'); 
    }
+
+   const addEmployeeButtonHandler = (e) => {
+        addEmployee()
+        window.location.reload(true); 
+
+   }
     
         return(
             <div className='sign-up'>
@@ -85,7 +92,7 @@ const CreateUser = () => {
                         setSalary(event.target.value) 
                     }} />
                     
-                    <button onClick={addEmployee}>Add Employee</button> 
+                    <button onClick={addEmployeeButtonHandler}>Add Employee</button> 
                     <button onClick={navPoolManager}>View Pool Manager</button> 
                             
                 </div>             

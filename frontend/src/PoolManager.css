@@ -1,0 +1,10 @@
+.pool-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    width:500px;
+    height:250px;
+    background-color: aqua;
+    border:25px solid red;
+}
