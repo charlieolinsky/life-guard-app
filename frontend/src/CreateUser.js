@@ -1,9 +1,8 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios'
 import './CreateUser.css';
 import { useNavigate } from 'react-router-dom';
-import { Location } from 'react-router-dom';
 
 const CreateUser = () => {
     
@@ -59,7 +58,6 @@ const CreateUser = () => {
    const addEmployeeButtonHandler = (e) => {
         addEmployee()
         window.location.reload(true); 
-
    }
     
         return(
