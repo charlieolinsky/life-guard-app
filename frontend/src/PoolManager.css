@@ -2,6 +2,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    resize: none;
     transform: translate(-50%, -50%);
     border:15px solid red;
     padding: 10px;
@@ -13,13 +14,23 @@
 
 .gs-up1 {
     position: absolute;
-    left: 15%;
+    left: 28%;
     top: 47%;
 }
 .gs-up2 {
     position: absolute;
-    left: 71%;
+    left: 64%;
     top: 47%;
+}
+.gs-up3 {
+    position: absolute;
+    left: 43%;
+    top: 5%;
+}
+.gs-up4 {
+    position: absolute;
+    left: 43%;
+    top: 83%;
 }
 
 
