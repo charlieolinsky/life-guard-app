@@ -53,6 +53,17 @@ server.get("/getLifeguards", (req, res) => {
     })
 })
 
+server.get("/getHeadLifeguards", (req, res) => {
+  db.query("SELECT name FROM employees WHERE position='Head Lifeguard'", (err, result) => {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.send(result)
+    }
+  })
+})
+
 // server.get('/getRandomUsers', (req, res) => {
 //     request('https://randomuser.me/api/?results=1', function(error, response, body) {
 //         if(!error && response.statusCode == 200) {

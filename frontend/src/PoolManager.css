@@ -1,8 +1,7 @@
 .pool-container {
     position: absolute;
     left: 50%;
-    top: 50%;
-    resize: none;
+    top: 50%; 
     transform: translate(-50%, -50%);
     border:15px solid red;
     padding: 10px;
@@ -14,28 +13,33 @@
 
 .gs-up1 {
     position: absolute;
-    left: 28%;
-    top: 47%;
+    left: 25%;
+    top: 25%;
+    transform: translate(-25%, -75%);
+
 }
 .gs-up2 {
     position: absolute;
-    left: 64%;
-    top: 47%;
 }
 .gs-up3 {
     position: absolute;
-    left: 43%;
-    top: 5%;
 }
 .gs-up4 {
     position: absolute;
-    left: 43%;
-    top: 83%;
 }
-
+.hg-up1 {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+}
 
 .guard-stands label {
     display: block;
     background-color: yellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hg-up1 label{
+    background-color: red;
 }

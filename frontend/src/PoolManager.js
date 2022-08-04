@@ -6,6 +6,7 @@ import './PoolManager.css'
 const PoolManager = () => {
     
     const [lifeguardList, setLifeguardList] = useState([])
+    const [headLifeguardList, setHeadLifeguardList] = useState([])
 
     useEffect(() => {
         const getLifeguardList = () => {
@@ -14,6 +15,15 @@ const PoolManager = () => {
             })
         }
         getLifeguardList()
+    }, [])
+
+    useEffect(() => {
+        const getHeadLifeguardList = () => {
+            axios.get('/getHeadLifeguards').then(response => {
+                setHeadLifeguardList(response.data)
+            })
+        }
+        getHeadLifeguardList()
     }, [])
 
     return(
@@ -70,7 +80,17 @@ const PoolManager = () => {
                                     return(<option key={index}>{lifeguard.name}</option>)
                             })}
                     </select>
+                </div>
+                <div className='hg-up1'>
+                    <label htmlFor="lg4">Assign Head Lifeguard: </label>
 
+                    <select name='hlg1'>
+                        <option>...</option>
+                            {  
+                                headLifeguardList.map((headLifeguard, index) => {
+                                    return(<option key={index}>{headLifeguard.name}</option>)
+                            })}
+                    </select>
                 </div>
 
             </div>
