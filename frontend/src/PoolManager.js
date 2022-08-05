@@ -27,9 +27,9 @@ const PoolManager = () => {
     }, [])
 
     return(
-        <div className='poolManager'>
+        <div className='pool-manager'>
             
-            <div className='pool-container'>
+            <div className='upperPool-container'>
                 <h1>Upper Pool</h1>
 
             </div>

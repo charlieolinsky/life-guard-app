@@ -1,38 +1,52 @@
-.pool-container {
+.pool-manager {
+    position: relative;
+    
+}
+/* Start Upper Pool */
+.upperPool-container {
     position: absolute;
-    left: 50%;
-    top: 50%; 
-    transform: translate(-50%, -50%);
-    border:15px solid red;
-    padding: 10px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+
     width:500px;
     height:250px;
     background-color: aqua;
+    border:15px solid red;
    
 }
-
 .gs-up1 {
-    position: absolute;
-    left: 25%;
-    top: 25%;
-    transform: translate(-25%, -75%);
+    position: absolute; 
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 300%);
 
 }
 .gs-up2 {
     position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 990%);
 }
 .gs-up3 {
     position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-150%, 650%);
 }
 .gs-up4 {
     position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(250%, 650%);
 }
 .hg-up1 {
     position: absolute;
-    left: 50%;
-    top: 50%; 
-    transform: translate(-50%, -50%);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 650%);
 }
+/* End Upper Pool */
 
 .guard-stands label {
     display: block;
