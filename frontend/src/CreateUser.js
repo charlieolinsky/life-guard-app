@@ -54,6 +54,10 @@ const CreateUser = () => {
         e.preventDefault();
         navigate('/PoolManager'); 
    }
+   const navShowEmployees = (e) => {
+        e.preventDefault();
+        navigate('/ShowEmployees')
+   }
 
    const addEmployeeButtonHandler = (e) => {
         addEmployee()
@@ -91,6 +95,7 @@ const CreateUser = () => {
                     }} />
                     
                     <button onClick={addEmployeeButtonHandler}>Add Employee</button> 
+                    <button onClick={navShowEmployees}>Show Employees</button> 
                     <button onClick={navPoolManager}>View Pool Manager</button> 
                             
                 </div>             

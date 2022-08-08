@@ -31,12 +31,10 @@ const PoolManager = () => {
             
             <div className='upperPool-container'>
                 <h1>Upper Pool</h1>
-
             </div>
             <div className='guard-stands'>
                 <div className='gs-up1'>
                     <label htmlFor="lg1">Assign Lifeguard: </label>
-
                     <select className='lg1'>
                         <option>...</option>
                         {  
@@ -44,11 +42,9 @@ const PoolManager = () => {
                                 return(<option key={index}>{lifeguard.name}</option>)
                         })}
                     </select>
-
                 </div>
                 <div className='gs-up2'>
                     <label htmlFor="lg2">Assign Lifeguard: </label>
-
                     <select name='lg2'>
                         <option>...</option>
                             {  
@@ -56,11 +52,9 @@ const PoolManager = () => {
                                     return(<option key={index}>{lifeguard.name}</option>)
                             })}
                     </select>
-
                 </div>
                 <div className='gs-up3'>
                     <label htmlFor="lg3">Assign Lifeguard: </label>
-
                     <select name='lg3'>
                         <option>...</option>
                             {  
@@ -68,11 +62,9 @@ const PoolManager = () => {
                                     return(<option key={index}>{lifeguard.name}</option>)
                             })}
                     </select>
-
                 </div>
                 <div className='gs-up4'>
                     <label htmlFor="lg4">Assign Lifeguard: </label>
-
                     <select name='lg4'>
                         <option>...</option>
                             {  
@@ -92,7 +84,6 @@ const PoolManager = () => {
                             })}
                     </select>
                 </div>
-
             </div>
         </div>
     )

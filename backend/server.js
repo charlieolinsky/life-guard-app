@@ -64,6 +64,33 @@ server.get("/getHeadLifeguards", (req, res) => {
   })
 })
 
+server.get("/getEmployees", (req, res) => {
+  db.query("Select * FROM employees", (err, result) => {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.send(result)
+    }
+  })
+})
+
+server.put('/update', (req, res) => {
+  const id = req.body.id
+  const name = req.body.name
+  console.log(id)
+  db.query("UPDATE SET employees name = ? WHERE id = ?", [name, id], (err, result) => {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.send(result)
+    }
+  })
+
+
+})
+
 // server.get('/getRandomUsers', (req, res) => {
 //     request('https://randomuser.me/api/?results=1', function(error, response, body) {
 //         if(!error && response.statusCode == 200) {
