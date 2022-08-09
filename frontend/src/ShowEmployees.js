@@ -18,15 +18,28 @@ const ShowEmployees = () => {
     
     return(
         <div className='show-employees'>
-            <label className='show-employees-label'>Employee View</label>
-            {
-                employees.map((employees, key) => {
-                    return(<table className='employee-table'>{key+". "+employees.name+", "+employees.position}</table>)
-                })
-            }
+            <label>Employee View</label>
+                <div className='employee-table'>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Salary</th>
+                        </tr>
+                            {employees.map((employees, key) => {
+                                return(
+                                    <tr>
+                                        <td>{employees.id}</td>
+                                        <td>{employees.name}</td>
+                                        <td>{employees.position}</td>
+                                        <td>{employees.salary}</td>
+                                    </tr>
+                                )
+                            })}
+                    </table>
+                </div>
         </div>
-        
-
     )
 }
 

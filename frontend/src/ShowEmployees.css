@@ -1,0 +1,26 @@
+.show-employees table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+.show-employees td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+.show-employees label {
+    display: block;
+    flex-direction: column;
+    padding: 15px;
+    font-size: 35px;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    
+    
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
